@@ -20,13 +20,15 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Il Sole 1936 home">
-        <span class="brand-logo brand-logo-text" aria-hidden="true"><span>Il Sole</span><small>1936</small></span>
+        <span class="brand-logo brand-logo-mark" aria-hidden="true">
+          <img src="assets/sole1936-logo-originale.png" alt="" width="1436" height="412" decoding="async" />
+        </span>
       </a>
 
       <nav class="site-nav" id="site-nav" data-nav>
-        <a href="#storia">La nostra storia</a>
         <a href="#ristorante">Ristorante</a>
         <a href="#location">Location</a>
+        <a href="#storia">La nostra storia</a>
         <a href="#recensioni">Recensioni</a>
         <a href="#contatti">Contatti</a>
       </nav>
@@ -115,32 +117,11 @@
           </div>
         </div>
 
-        <div class="hero-scroll-ornament" aria-hidden="true"><span></span></div>
         <div class="hero-scroll" aria-hidden="true">Scroll</div>
       </section>
 
-      <section class="history-section" id="storia">
-        <div class="history-shell">
-          <div class="history-copy">
-            <p class="eyebrow">La nostra storia</p>
-            <h2>Sole 1936: dove il mare racconta storie.</h2>
-            <p>
-              Il Sole 1936 è un rifugio sul mare, lontano dal frastuono, un angolo di Rapallo dove il sole bacia l’acqua e la storia incontra il gusto.
-            </p>
-            <p>
-              Il nome è un omaggio a Luigi, pescatore e atleta olimpico di canottaggio nel 1936. Rudy Luxardo porta ogni giorno in cucina memoria, famiglia, viaggi e radici liguri.
-            </p>
-          </div>
-          <figure class="history-media">
-            <img loading="eager" decoding="async" src="assets/placeholder-black.svg" alt="Spazio foto Il Sole 1936" />
-          </figure>
-        </div>
-        <div class="history-quote">
-          <p>Ogni piatto è un ponte che unisce le radici della nostra terra con i sapori e le storie raccolte lungo il viaggio.</p>
-        </div>
-      </section>
-
       <section class="restaurant-experience" id="ristorante">
+        <p class="mobile-section-pill">Ristorante</p>
         <div class="restaurant-feature">
           <figure class="restaurant-feature-media">
             <picture>
@@ -237,6 +218,7 @@
       </section>
 
       <section class="twiga-beach" id="location">
+        <p class="mobile-section-pill">Location</p>
         <div class="restaurant-feature location-feature">
           <figure class="restaurant-feature-media location-feature-media">
             <picture>
@@ -318,6 +300,32 @@
             <button class="carousel-arrow" type="button" aria-label="Immagine precedente" data-carousel-prev></button>
             <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Immagine successiva" data-carousel-next></button>
           </div>
+        </div>
+      </section>
+
+      <section class="history-section" id="storia">
+        <p class="mobile-section-pill">La nostra storia</p>
+        <div class="history-shell">
+          <div class="history-copy">
+            <p class="eyebrow">La nostra storia</p>
+            <h2>Sole 1936 nasce dalle radici di Rudy Luxardo e dal desiderio di trasformare la memoria familiare in un’esperienza da condividere.</h2>
+            <p>
+              Il nome rende omaggio al nonno Luigi, pescatore e atleta, che nel 1936 partecipò ai Giochi Olimpici di Berlino con la squadra italiana di canottaggio.
+            </p>
+            <p>
+              Dalla nonna Silvia e dalla mamma Mimma, Rudy ha imparato il valore del cibo come gesto d’amore. A questa eredità ha unito sapori e ispirazioni raccolti durante i suoi viaggi, dando vita a una cucina in cui la Liguria incontra il mondo.
+            </p>
+          </div>
+          <figure class="history-media">
+            <img loading="lazy" decoding="async" src="assets/history-luigi-luxardo.jpg" alt="Luigi Luxardo con la squadra italiana di canottaggio ai Giochi di Berlino del 1936" width="1401" height="1123" />
+            <figcaption class="history-caption">
+              <strong>Luigi Luxardo, a sinistra</strong>
+              <span>Atleta olimpico ai Giochi di Berlino del 1936</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="history-quote">
+          <p>«Ogni piatto è un ponte tra le nostre radici e le storie raccolte lungo il viaggio.»</p>
         </div>
       </section>
 
@@ -521,69 +529,76 @@
       <div class="booking-modal-backdrop" data-modal-close></div>
       <div class="booking-dialog menu-dialog">
         <button class="modal-close" type="button" aria-label="Chiudi menù" data-modal-close></button>
+        <img class="menu-brand-logo" src="assets/sole1936-logo-originale.png" alt="Sole1936 Ristorante" width="1436" height="412" decoding="async" />
         <p class="eyebrow">Menù digitale</p>
-        <h2 id="menu-modal-title">Pranzi e cene da Il Sole 1936</h2>
-        <p class="menu-intro">Scegli il momento e consulta il menù direttamente dal telefono.</p>
+        <h2 id="menu-modal-title">Il menù di Sole1936</h2>
+        <p class="menu-intro">Consulta piatti, prezzi e proposte della carta.</p>
 
-        <div class="menu-tabs">
-          <input id="menu-lunch" name="menu-view" type="radio" checked />
-          <input id="menu-dinner" name="menu-view" type="radio" />
+        <div class="menu-catalog" aria-label="Menù Sole1936">
+          <section class="menu-section">
+            <p class="menu-section-group">Antipasti</p>
+            <h3>Antipasti</h3>
+            <ul class="menu-list">
+              <li class="menu-item"><div><strong>Focaccette di Sori</strong><span>Focaccia tipica fritta a mano, ripiena di stracchino e fritta.</span></div><span class="menu-price">€ 12</span></li>
+              <li class="menu-item"><div><strong>Acciughe fritte</strong><span>Acciughe liguri fritte e croccanti, con crema d’aglio dolce.</span></div><span class="menu-price">€ 15</span></li>
+              <li class="menu-item"><div><strong>Il Re Polpo</strong><span>Insalata di polpo con olive taggiasche, pomodorini su misticanza di stagione e cipolla di Tropea.</span></div><span class="menu-price">€ 22</span></li>
+              <li class="menu-item"><div><strong>I nostri gamberi mandorlati</strong><span>Croccanti in panko e mandorle con maionese al lime.</span></div><span class="menu-price">€ 16</span></li>
+              <li class="menu-item"><div><strong>Muscoli alla marinara</strong><span>Muscoli de La Spezia preparati secondo tradizione.</span></div><span class="menu-price">€ 15</span></li>
+              <li class="menu-item"><div><strong>Muscoli ripieni</strong><span>Ripieni secondo la tradizione, con salsa al pomodoro.</span></div><span class="menu-price">€ 25</span></li>
+              <li class="menu-item"><div><strong>Salmone upstream</strong><span>Salmone marinato e affumicato, servito con accompagnamenti della cucina.</span></div><span class="menu-price">€ 22</span></li>
+              <li class="menu-item"><div><strong>La giardiniera di Morgan</strong><span>Verdure lavorate a mano per preservarne gusto e croccantezza.</span></div><span class="menu-price">€ 12</span></li>
+            </ul>
+          </section>
 
-          <div class="menu-tab-controls" aria-label="Scegli menù">
-            <label class="menu-tab-label menu-tab-label-lunch" for="menu-lunch">Pranzi</label>
-            <label class="menu-tab-label menu-tab-label-dinner" for="menu-dinner">Cene</label>
-          </div>
+          <section class="menu-section">
+            <p class="menu-section-group">Primi piatti</p>
+            <h3>Primi piatti</h3>
+            <ul class="menu-list">
+              <li class="menu-item"><div><strong>Carbonara di mare</strong><span>Spaghetto Mancini con ragù di gamberi e crostacei, mantecato con uovo e rifinito con Gambero Viola di Santa Margherita Ligure.</span></div><span class="menu-price">€ 26</span></li>
+              <li class="menu-item"><div><strong>Mandillo al pesto</strong><span>Mandilli fatti in casa, con pesto della tradizione al basilico di Prà DOP.</span></div><span class="menu-price">€ 18</span></li>
+              <li class="menu-item"><div><strong>Che Gnucco il pescatore</strong><span>Gnocchi fatti in casa, con ragù di pescato del giorno e passata di pomodoro BIO. Con burrata pugliese € 21.</span></div><span class="menu-price">€ 18</span></li>
+              <li class="menu-item"><div><strong>Risotto Tenuta Margherita</strong><span>Asparagi freschi, bisque di gamberi e croccante al pomodoro. Minimo per due persone.</span></div><span class="menu-price">€ 25</span></li>
+              <li class="menu-item"><div><strong>Pacchero o tagliatella all’aragosta</strong><span>Preparati sul momento, per una persona.</span></div><span class="menu-price">€ 42</span></li>
+              <li class="menu-item"><div><strong>Pacchero o tagliatella all’astice</strong><span>Preparati sul momento, per due persone.</span></div><span class="menu-price">€ 70</span></li>
+              <li class="menu-item"><div><strong>Pacchero o tagliatella all’astice blu</strong><span>Preparati sul momento, per due persone.</span></div><span class="menu-price">€ 90</span></li>
+            </ul>
+          </section>
 
-          <div class="menu-pages">
-            <div class="menu-page menu-page-lunch">
-              <div class="menu-grid">
-                <section class="menu-section">
-                  <p class="menu-section-group">Pranzo</p>
-                  <h3>Menù in aggiornamento</h3>
-                  <ul class="menu-list">
-                    <li class="menu-item"><div><strong>Cucina ligure di mare</strong><span>Qui inseriremo i piatti ufficiali del ristorante appena confermati.</span></div><span class="menu-price">-</span></li>
-                    <li class="menu-item"><div><strong>Materie prime regionali</strong><span>Proposta pensata per raccontare Rapallo, il mare e la stagione.</span></div><span class="menu-price">-</span></li>
-                  </ul>
-                </section>
-                <section class="menu-section">
-                  <p class="menu-section-group">Vista mare</p>
-                  <h3>Pranzo al Sole</h3>
-                  <ul class="menu-list">
-                    <li class="menu-item"><div><strong>Piatti freschi</strong><span>Una selezione leggera e curata per la pausa sul lungomare.</span></div><span class="menu-price">-</span></li>
-                    <li class="menu-item"><div><strong>Prenotazione consigliata</strong><span>Per tavoli vista mare e richieste speciali chiamaci prima dell'arrivo.</span></div><span class="menu-price">-</span></li>
-                  </ul>
-                </section>
-              </div>
-            </div>
+          <section class="menu-section">
+            <p class="menu-section-group">Crudi del mare</p>
+            <h3>Crudi del mare</h3>
+            <ul class="menu-list">
+              <li class="menu-item"><div><strong>Gran crudo Sole1936</strong><span>Selezione del nostro mare con crostacei, ostriche e pescato del giorno. Disponibile per due persone.</span></div><span class="menu-price">€ 68</span></li>
+              <li class="menu-item"><div><strong>Misto crudo imperiale</strong><span>Un’esperienza dedicata agli amanti del mare con crostacei, ostriche e selezioni pregiate del pescato del giorno. Disponibile 3-4 persone.</span></div><span class="menu-price">€ 140</span></li>
+              <li class="menu-item"><div><strong>Gamberi Viola S. Margherita Ligure</strong><span>Sei pezzi / dodici pezzi. Selezione di prima taglia, su richiesta anche leggermente scottati alla griglia.</span></div><span class="menu-price">€ 42 / € 80</span></li>
+              <li class="menu-item"><div><strong>Degustazione ostriche</strong><span>Tre varietà selezionate secondo disponibilità, 6 pezzi.</span></div><span class="menu-price">€ 36</span></li>
+              <li class="menu-item"><div><strong>Ostriche selezionate</strong><span>Sei pezzi / dodici pezzi.</span></div><span class="menu-price">€ 32 / € 52</span></li>
+              <li class="menu-item"><div><strong>Ceviche di pescato del giorno</strong><span>Marinata al champonzu, con note sgrumate e leggermente piccanti, croccante della cucina.</span></div><span class="menu-price">€ 22</span></li>
+              <li class="menu-item"><div><strong>Tartare di tonno rosso</strong><span>Con composta di mirtilli, passion fruit e mango.</span></div><span class="menu-price">€ 22</span></li>
+              <li class="menu-item"><div><strong>Il caviale come piace a noi</strong><span>Caviale di selezione servito con blinis, pane caldo artigianale, burro de baratte demi-sel, crème fraîche e patata.</span></div><span class="menu-price">€ 28</span></li>
+            </ul>
+          </section>
 
-            <div class="menu-page menu-page-dinner">
-              <div class="menu-grid">
-                <section class="menu-section">
-                  <p class="menu-section-group">Cena</p>
-                  <h3>Menù in aggiornamento</h3>
-                  <ul class="menu-list">
-                    <li class="menu-item"><div><strong>Ricette originali</strong><span>La carta definitiva verrà inserita appena ci invierai i contenuti ufficiali.</span></div><span class="menu-price">-</span></li>
-                    <li class="menu-item"><div><strong>Esperienza romantica</strong><span>Cena vista mare, atmosfera raccolta e servizio dedicato.</span></div><span class="menu-price">-</span></li>
-                  </ul>
-                </section>
-                <section class="menu-section">
-                  <p class="menu-section-group">Prenotazioni</p>
-                  <h3>Dalle 18:30</h3>
-                  <ul class="menu-list">
-                    <li class="menu-item"><div><strong>Servizio cena</strong><span>Fascia indicativa 18:30-22:00, con conferma telefonica.</span></div><span class="menu-price">-</span></li>
-                    <li class="menu-item"><div><strong>Eventi privati</strong><span>Segnala nelle note occasione, numero ospiti e preferenze.</span></div><span class="menu-price">-</span></li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          </div>
-
+          <section class="menu-section">
+            <p class="menu-section-group">Secondi piatti</p>
+            <h3>Secondi piatti</h3>
+            <ul class="menu-list">
+              <li class="menu-item"><div><strong>Fritto solo calamari</strong><span>Calamari fritti croccanti.</span></div><span class="menu-price">€ 19</span></li>
+              <li class="menu-item"><div><strong>Fritto misto della Riviera</strong><span>Con calamari, gamberi, acciughe e paranza. Variazioni possibili a seconda del pescato.</span></div><span class="menu-price">€ 25</span></li>
+              <li class="menu-item"><div><strong>Filetto di branzino alla ligure</strong><span>Servito secondo tradizione con olive, pinoli, pomodorini e patate.</span></div><span class="menu-price">€ 27</span></li>
+              <li class="menu-item"><div><strong>Filetto di pescato del giorno</strong><span>Pescato del giorno alla griglia servito con asparagi e maionese di polpo.</span></div><span class="menu-price">€ 35</span></li>
+              <li class="menu-item"><div><strong>Tataki di tonno rosso</strong><span>Lingotto di Tonno Rosso Blue fin mediterraneo servito con champonzu, sale Maldon e crumble al wasabi.</span></div><span class="menu-price">€ 28</span></li>
+              <li class="menu-item"><div><strong>Entrecote di toro</strong><span>Taglio pregiato, ricco di sapore, servito in tagliata.</span></div><span class="menu-price">€ 29</span></li>
+              <li class="menu-item"><div><strong>Pescato per due persone</strong><span>Prezzo variabile a seconda della selezione giornaliera.</span></div><span class="menu-price">Su richiesta</span></li>
+            </ul>
+          </section>
         </div>
       </div>
     </div>
 
     <footer class="site-footer">
       <div class="footer-legal-shell">
+        <img class="footer-brand-logo" src="assets/sole1936-logo-white.png" alt="Sole1936 Ristorante" width="1436" height="412" loading="lazy" decoding="async" />
         <p class="footer-company-name">Sole1936 SRL</p>
         <p class="footer-line">P. IVA 02449070990</p>
         <p class="footer-line">Lungomare Castello 10 · 16035 Rapallo (GE), Italia</p>

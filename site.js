@@ -13,7 +13,7 @@
   const mobileHeroQuery = window.matchMedia("(max-width: 720px)");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const menuModal = document.getElementById("menu-modal");
-  const menuPages = menuModal?.querySelector(".menu-pages");
+  const menuPages = menuModal?.querySelector(".menu-catalog, .menu-pages");
   const menuInputs = menuModal?.querySelectorAll('input[name="menu-view"]') || [];
   const restaurantModal = document.getElementById("restaurant-modal");
   const restaurantDate = restaurantModal?.querySelector('input[name="date"]');
@@ -63,10 +63,12 @@
     [".hero .eyebrow", "Rapallo | Ligurian Riviera"],
     [".hero-copy", "A seafront bar and restaurant in Rapallo: Ligurian cuisine, seafood, coastal views and the slow rhythm of the Riviera."],
     ["#storia .history-copy .eyebrow", "Our story"],
-    ["#storia .history-copy h2", "Sole 1936: where the sea tells stories."],
-    ["#storia .history-copy p:nth-of-type(2)", "Il Sole 1936 is a seafront refuge in Rapallo, where sunlight meets the water and history meets taste."],
-    ["#storia .history-copy p:nth-of-type(3)", "The name honors Luigi, fisherman and Olympic rower in 1936. Rudy Luxardo brings memory, family, travels and Ligurian roots into the kitchen every day."],
-    ["#storia .history-quote p", "Every dish bridges the roots of our land with the flavors and stories gathered along the journey."],
+    ["#storia .history-copy h2", "Sole 1936 was born from Rudy Luxardo’s roots and from the desire to turn family memory into an experience to share."],
+    ["#storia .history-copy p:nth-of-type(2)", "The name pays tribute to his grandfather Luigi, fisherman and athlete, who took part in the 1936 Berlin Olympic Games with the Italian rowing team."],
+    ["#storia .history-copy p:nth-of-type(3)", "From his grandmother Silvia and his mother Mimma, Rudy learned the value of food as a gesture of love. To this legacy he added flavors and inspiration gathered during his travels, creating a cuisine where Liguria meets the world."],
+    ["#storia .history-quote p", "Every dish is a bridge between our roots and the stories gathered along the journey."],
+    [".history-caption strong", "Luigi Luxardo, on the left"],
+    [".history-caption span", "Olympic athlete at the 1936 Berlin Games"],
     ["#ristorante .restaurant-feature-copy .eyebrow", "Restaurant"],
     ["#ristorante .restaurant-feature-copy h2", "Ligurian seafood cuisine with a Rapallo view."],
     ["#ristorante .restaurant-feature-copy > p:not(.eyebrow)", "Contemporary Ligurian cuisine, original recipes and regional ingredients: from lunch to dinner, Il Sole 1936 welcomes guests looking for seafood, taste and a table facing the sea."],
@@ -101,10 +103,8 @@
     ["#restaurant-modal-title", "Book your table"],
     [".dinner-window-help", "Lunch 12:30-14:30, dinner 18:30-22:00. Closed Monday except holidays and long weekends."],
     ["#menu-modal .eyebrow", "Digital menu"],
-    ["#menu-modal-title", "Lunch and dinner at Il Sole 1936"],
-    [".menu-intro", "The final menu will be added as soon as the official dishes are confirmed."],
-    [".menu-tab-label-lunch", "Lunch"],
-    [".menu-tab-label-dinner", "Dinner"],
+    ["#menu-modal-title", "The Sole1936 menu"],
+    [".menu-intro", "Browse dishes, prices and menu proposals."],
     [".footer-copy", "© 2026 Il Sole 1936 · All rights reserved"],
   ];
 

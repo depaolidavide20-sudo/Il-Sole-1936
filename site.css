@@ -117,7 +117,7 @@ button {
   right: 0;
   z-index: 90;
   display: grid;
-  grid-template-columns: 184px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(184px, 228px) minmax(0, 1fr) auto;
   align-items: center;
   gap: 24px;
   padding: 20px 34px;
@@ -156,14 +156,23 @@ button {
 }
 
 .brand-logo {
-  width: 154px;
+  display: inline-flex;
+  width: clamp(168px, 14vw, 220px);
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.brand-logo img {
+  display: block;
+  width: 100%;
   height: auto;
-  max-height: 92px;
-  border-radius: 8px;
-  padding: 8px 12px;
-  background: rgba(255, 250, 240, 0.9);
+  max-height: 64px;
   object-fit: contain;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
 }
 
 .site-nav {
@@ -524,59 +533,6 @@ h3 {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
-}
-
-.hero-scroll-ornament {
-  position: absolute;
-  bottom: 76px;
-  left: 50%;
-  z-index: 4;
-  display: block;
-  width: min(280px, 58vw);
-  height: 86px;
-  opacity: var(--hero-ornament-opacity);
-  pointer-events: none;
-  transform: translate3d(-50%, var(--hero-ornament-y), 0);
-  will-change: opacity, transform;
-}
-
-.hero-scroll-ornament::before {
-  position: absolute;
-  top: 42px;
-  left: 50%;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(255, 250, 240, 0), rgba(255, 250, 240, 0.82) 28%, rgba(225, 176, 93, 0.96) 50%, rgba(255, 250, 240, 0.82) 72%, rgba(255, 250, 240, 0));
-  box-shadow: 0 0 26px rgba(225, 176, 93, 0.42);
-  content: "";
-  transform: translateX(-50%) scaleX(var(--hero-ornament-scale));
-  transform-origin: center;
-}
-
-.hero-scroll-ornament::after {
-  position: absolute;
-  top: 31px;
-  left: 50%;
-  width: 38px;
-  height: 24px;
-  border-top: 1px solid rgba(255, 250, 240, 0.82);
-  border-bottom: 1px solid rgba(225, 176, 93, 0.72);
-  content: "";
-  filter: drop-shadow(0 0 18px rgba(225, 176, 93, 0.48));
-  transform: translateX(calc(-50% + var(--hero-shine-x))) skewX(-18deg);
-}
-
-.hero-scroll-ornament span {
-  position: absolute;
-  top: 38px;
-  left: 50%;
-  width: 7px;
-  height: 7px;
-  border: 1px solid rgba(255, 250, 240, 0.9);
-  border-radius: 999px;
-  background: rgba(225, 176, 93, 0.88);
-  box-shadow: 0 0 22px rgba(225, 176, 93, 0.72);
-  transform: translateX(-50%);
 }
 
 .hero-scroll {
@@ -1233,6 +1189,10 @@ select {
   text-transform: uppercase;
 }
 
+.mobile-section-pill {
+  display: none;
+}
+
 .beach-story .eyebrow,
 .restaurant-feature-copy .eyebrow {
   margin-bottom: 26px;
@@ -1699,6 +1659,14 @@ select {
   justify-items: center;
   width: min(980px, 100%);
   margin: 0 auto;
+}
+
+.footer-brand-logo {
+  display: block;
+  width: min(284px, 72vw);
+  height: auto;
+  margin: 0 auto 18px;
+  opacity: 0.92;
 }
 
 .footer-company-name {
@@ -2193,22 +2161,66 @@ select {
   height: min(900px, calc(100svh - 36px));
   max-height: min(900px, calc(100svh - 36px));
   display: grid;
-  grid-template-rows: auto auto auto minmax(0, 1fr);
+  grid-template-rows: auto auto auto auto minmax(0, 1fr);
   overflow: hidden;
   padding: clamp(22px, 3vw, 36px);
+  text-align: center;
+}
+
+.menu-brand-logo {
+  display: block;
+  width: min(292px, 64vw);
+  height: auto;
+  max-height: 84px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+.menu-dialog .eyebrow {
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .menu-dialog h2 {
-  margin-bottom: 10px;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  max-width: 100%;
+  margin: 0 auto 10px;
+  font-size: 4.5rem;
+  line-height: 0.96;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 1040px) {
+  .menu-dialog h2 {
+    font-size: 3.35rem;
+  }
 }
 
 .menu-intro {
-  margin: -2px 0 22px;
+  max-width: 720px;
+  margin: -2px auto 22px;
   color: var(--muted);
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   font-weight: 660;
   line-height: 1.45;
+  text-align: center;
+}
+
+.menu-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scroll-padding-bottom: 26px;
+  padding: 0 8px 26px 0;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  text-align: left;
 }
 
 .menu-tabs {
@@ -2412,9 +2424,13 @@ select {
   }
 
   .brand-logo {
-    width: 106px;
-    max-height: 66px;
-    padding: 6px 8px;
+    width: 136px;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .brand-logo img {
+    max-height: 48px;
   }
 
   .nav-toggle {
@@ -2561,10 +2577,14 @@ select {
   }
 
   .brand-logo {
-    width: 88px;
-    max-height: 54px;
+    width: 118px;
+    min-height: 0;
     border-radius: 6px;
-    padding: 5px 6px;
+    padding: 0;
+  }
+
+  .brand-logo img {
+    max-height: 42px;
   }
 
   .language-switch {
@@ -2670,59 +2690,6 @@ select {
     -webkit-text-stroke: 0.35px rgba(255, 253, 244, 0.72);
   }
 
-  .hero-scroll-ornament {
-    position: absolute;
-    bottom: 92px;
-    left: 50%;
-    z-index: 4;
-    display: block;
-    width: 104px;
-    height: 104px;
-    opacity: var(--hero-ornament-opacity);
-    pointer-events: none;
-    transform: translate3d(-50%, var(--hero-ornament-y), 0);
-    will-change: opacity, transform;
-  }
-
-  .hero-scroll-ornament::before {
-    position: absolute;
-    top: 42px;
-    left: 50%;
-    width: 112px;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(255, 250, 240, 0), rgba(255, 250, 240, 0.8), rgba(225, 176, 93, 0.96), rgba(255, 250, 240, 0));
-    box-shadow: 0 0 20px rgba(225, 176, 93, 0.42);
-    content: "";
-    transform: translateX(-50%) scaleX(var(--hero-ornament-scale));
-    transform-origin: center;
-  }
-
-  .hero-scroll-ornament::after {
-    position: absolute;
-    top: 31px;
-    left: 50%;
-    width: 34px;
-    height: 23px;
-    border-top: 1px solid rgba(255, 250, 240, 0.82);
-    border-bottom: 1px solid rgba(225, 176, 93, 0.72);
-    content: "";
-    filter: drop-shadow(0 0 16px rgba(225, 176, 93, 0.44));
-    transform: translateX(calc(-50% + var(--hero-shine-x))) skewX(-18deg);
-  }
-
-  .hero-scroll-ornament span {
-    position: absolute;
-    top: 38px;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    border: 1px solid rgba(255, 250, 240, 0.88);
-    border-radius: 999px;
-    background: rgba(225, 176, 93, 0.78);
-    box-shadow: 0 0 20px rgba(225, 176, 93, 0.68);
-    transform: translateX(-50%);
-  }
-
   .hero-scroll {
     display: none;
   }
@@ -2741,6 +2708,34 @@ select {
 
   .twiga-beach {
     padding-bottom: 82px;
+  }
+
+  .mobile-section-pill,
+  .review-pill,
+  .contact-pill {
+    display: inline-flex;
+    width: max-content;
+    max-width: calc(100% - 30px);
+    min-height: 32px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    border: 1px solid rgba(35, 57, 72, 0.22);
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: var(--sea);
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  #ristorante .restaurant-feature-copy > .eyebrow,
+  #location .location-feature-copy > .eyebrow,
+  #storia .history-copy > .eyebrow {
+    display: none;
   }
 
   .beach-opening {
@@ -2942,6 +2937,7 @@ select {
   }
 
   .reviews-inner h2 {
+    margin-top: 0;
     font-size: 2.72rem;
   }
 
@@ -3027,13 +3023,11 @@ select {
   .contact-card {
     padding: 14px;
     border-radius: 14px;
+    text-align: center;
   }
 
   .contact-pill {
-    min-height: 32px;
-    padding: 6px 14px;
-    font-size: 0.56rem;
-    letter-spacing: 0.22em;
+    margin-bottom: 10px;
   }
 
   .contact-card h2 {
@@ -3045,9 +3039,11 @@ select {
   .contact-item {
     grid-template-columns: 30px 1fr;
     gap: 8px;
+    width: 100%;
     margin-top: 5px;
     border-radius: 12px;
     padding: 6px 8px;
+    text-align: left;
   }
 
   .contact-icon {
@@ -3305,9 +3301,15 @@ select {
     padding: 24px 14px 18px;
   }
 
+  .menu-brand-logo {
+    width: min(228px, calc(100% - 72px));
+    max-height: 58px;
+    margin-bottom: 12px;
+  }
+
   .menu-dialog h2 {
     margin-bottom: 8px;
-    font-size: clamp(2.05rem, 10vw, 3.2rem);
+    font-size: 3.35rem;
   }
 
   .menu-intro {
@@ -3328,6 +3330,12 @@ select {
   .menu-pages {
     max-height: none;
     scroll-padding-bottom: 18px;
+    padding: 0 4px 18px 0;
+  }
+
+  .menu-catalog {
+    grid-template-columns: 1fr;
+    gap: 12px;
     padding: 0 4px 18px 0;
   }
 
@@ -3392,7 +3400,7 @@ select {
     max-height: 100vh;
     height: 100svh;
     max-height: 100svh;
-    grid-template-rows: auto auto auto minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto minmax(0, 1fr);
     border-radius: 0;
     padding: 14px 12px 10px;
   }
@@ -3413,20 +3421,27 @@ select {
 
   .menu-dialog .eyebrow {
     margin-bottom: 6px;
-    padding-right: 48px;
+    padding-right: 0;
     font-size: 0.68rem;
+    text-align: center;
+  }
+
+  .menu-brand-logo {
+    width: min(188px, calc(100% - 58px));
+    max-height: 48px;
+    margin: 0 auto 8px;
   }
 
   .menu-dialog h2 {
     margin-bottom: 6px;
-    padding-right: 48px;
-    font-size: clamp(1.55rem, 6.7vw, 2.05rem);
+    padding-right: 0;
+    font-size: 2.22rem;
     line-height: 0.96;
   }
 
   .menu-intro {
-    margin: 0 0 8px;
-    max-width: calc(100% - 48px);
+    margin: 0 auto 10px;
+    max-width: 420px;
     font-size: 0.72rem;
     line-height: 1.25;
   }
@@ -3449,6 +3464,13 @@ select {
 
   .menu-pages {
     height: 100%;
+    padding: 0 0 12px;
+    scroll-padding-bottom: 12px;
+  }
+
+  .menu-catalog {
+    height: 100%;
+    gap: 10px;
     padding: 0 0 12px;
     scroll-padding-bottom: 12px;
   }
@@ -3601,8 +3623,9 @@ img[src$="placeholder-black.svg"] {
 }
 
 .history-copy {
+  justify-self: center;
   max-width: 980px;
-  text-align: left;
+  text-align: center;
 }
 
 .history-copy .eyebrow {
@@ -3610,7 +3633,7 @@ img[src$="placeholder-black.svg"] {
   min-height: 42px;
   align-items: center;
   justify-content: center;
-  margin: 0 0 26px;
+  margin: 0 auto 26px;
   border: 1px solid rgba(35, 57, 72, 0.22);
   border-radius: 999px;
   padding: 9px 24px;
@@ -3623,15 +3646,18 @@ img[src$="placeholder-black.svg"] {
 
 .history-copy h2 {
   max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
   color: rgba(33, 28, 24, 0.9);
-  font-size: clamp(3rem, 5vw, 5.9rem);
-  font-weight: 400;
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 3.8vw, 4.85rem);
+  font-style: italic;
+  font-weight: 680;
+  line-height: 1.06;
 }
 
 .history-copy p:not(.eyebrow) {
   max-width: 860px;
-  margin: 30px 0 0;
+  margin: 30px auto 0;
   color: var(--muted);
   font-size: 1.16rem;
   line-height: 1.62;
@@ -3639,16 +3665,47 @@ img[src$="placeholder-black.svg"] {
 
 .history-media {
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   border-radius: var(--radius);
-  background: #000;
+  background: transparent;
 }
 
 .history-media img {
+  display: block;
   width: 100%;
   height: min(720px, calc(100svh - 170px));
   min-height: 520px;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 70px rgba(33, 28, 24, 0.18);
   object-fit: cover;
+  object-position: 42% center;
+}
+
+.history-caption {
+  display: grid;
+  gap: 6px;
+  padding: 16px 4px 0;
+  background: transparent;
+  color: rgba(33, 28, 24, 0.72);
+  text-align: center;
+}
+
+.history-caption strong {
+  color: rgba(33, 28, 24, 0.9);
+  font-family: Didot, "Bodoni 72", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.02rem, 1.4vw, 1.26rem);
+  font-style: italic;
+  font-weight: 650;
+  line-height: 1.08;
+}
+
+.history-caption span {
+  color: rgba(35, 57, 72, 0.72);
+  font-size: 0.74rem;
+  font-style: italic;
+  font-weight: 680;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
 }
 
 .history-quote {
@@ -3661,6 +3718,7 @@ img[src$="placeholder-black.svg"] {
   margin: 0;
   color: rgba(33, 28, 24, 0.86);
   font-size: clamp(2.25rem, 3.8vw, 4.3rem);
+  font-style: italic;
   font-weight: 400;
   line-height: 1.08;
 }
@@ -3699,6 +3757,10 @@ img[src$="placeholder-black.svg"] {
     height: 62vw;
     min-height: 320px;
     max-height: 640px;
+  }
+
+  .history-caption {
+    padding: 14px 15px 16px;
   }
 
   .history-copy {
