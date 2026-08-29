@@ -1,16 +1,17 @@
 :root {
   color-scheme: light;
-  --ink: #211c18;
+  --ink: #211C18;
   --muted: #736b61;
   --paper: #f7f0dd;
   --paper-strong: #eadfca;
   --white: #fffaf0;
   --sea: #233948;
   --sea-dark: #172734;
-  --sun: #e1b05d;
+  --sun: #E1B05D;
+  --sun-hover: #C99543;
   --coral: #a9674d;
   --green: #716b54;
-  --line: rgba(33, 28, 24, 0.14);
+  --line: rgba(225, 176, 93, 0.32);
   --shadow: 0 24px 80px rgba(33, 28, 24, 0.18);
   --radius: 8px;
   --hero-scale: 1;
@@ -318,14 +319,15 @@ button {
 }
 
 .button-primary {
-  background: var(--white);
+  background: var(--sun);
   color: var(--ink);
-  box-shadow: 0 14px 36px rgba(255, 250, 240, 0.2);
+  box-shadow: 0 16px 38px rgba(225, 176, 93, 0.24);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: #fff4cf;
+  background: var(--sun-hover);
+  color: var(--ink);
 }
 
 .button svg,
@@ -686,8 +688,8 @@ select {
   border: 0;
   border-radius: 4px;
   padding: 14px 20px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
   font-size: 0.86rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -713,8 +715,8 @@ select {
 
 .whatsapp-cta:hover,
 .whatsapp-cta:focus-visible {
-  background: var(--sea);
-  color: var(--white);
+  background: var(--sun-hover);
+  color: var(--ink);
   transform: translateY(-2px);
 }
 
@@ -753,7 +755,7 @@ select {
   scroll-snap-align: start;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #211c18;
+  background: var(--ink);
 }
 
 .beach-card img,
@@ -775,7 +777,7 @@ select {
   align-items: center;
   gap: 28px;
   margin-top: 18px;
-  color: var(--ink);
+  color: var(--sun);
   font-size: 1rem;
 }
 
@@ -788,11 +790,11 @@ select {
   display: grid;
   width: 66px;
   height: 66px;
-  border: 1px solid rgba(35, 57, 72, 0.22);
+  border: 1px solid rgba(225, 176, 93, 0.64);
   border-radius: 50%;
   background: rgba(255, 250, 240, 0.56);
-  color: var(--ink);
-  box-shadow: 0 16px 42px rgba(35, 57, 72, 0.08);
+  color: var(--sun);
+  box-shadow: 0 16px 42px rgba(225, 176, 93, 0.12);
   transition:
     border-color 180ms ease,
     background 180ms ease,
@@ -841,9 +843,9 @@ select {
 
 .carousel-arrow:hover,
 .carousel-arrow:focus-visible {
-  border-color: rgba(35, 57, 72, 0.48);
-  background: var(--sea-dark);
-  color: var(--white);
+  border-color: var(--sun-hover);
+  background: var(--sun-hover);
+  color: var(--ink);
   transform: translateX(-4px);
 }
 
@@ -853,7 +855,7 @@ select {
 }
 
 .carousel-arrow:focus-visible {
-  outline: 2px solid rgba(35, 57, 72, 0.36);
+  outline: 2px solid rgba(225, 176, 93, 0.42);
   outline-offset: 6px;
 }
 
@@ -906,7 +908,7 @@ select {
   display: block;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #211c18;
+  background: var(--ink);
   box-shadow: 0 22px 64px rgba(33, 28, 24, 0.12);
 }
 
@@ -919,7 +921,7 @@ select {
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #211c18;
+  background: var(--ink);
 }
 
 .service-card img {
@@ -974,13 +976,14 @@ select {
 .service-booking .button {
   min-height: 58px;
   padding-inline: 30px;
-  background: #302821;
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
 }
 
 .service-booking .button:hover,
 .service-booking .button:focus-visible {
-  background: #211c18;
+  background: var(--sun-hover);
+  color: var(--ink);
 }
 
 .restaurant-experience {
@@ -1063,7 +1066,7 @@ select {
   width: min(560px, 100%);
   margin-top: 34px;
   padding: 38px 38px;
-  background: #302821;
+  background: var(--ink);
   color: var(--white);
   text-align: center;
 }
@@ -1107,7 +1110,7 @@ select {
 
 .restaurant-info-panel button {
   border: 0;
-  background: var(--paper);
+  background: var(--sun);
   color: var(--ink);
 }
 
@@ -1116,7 +1119,7 @@ select {
 }
 
 .restaurant-call-link {
-  border: 1px solid rgba(255, 250, 240, 0.44);
+  border: 1px solid rgba(225, 176, 93, 0.7);
   background: rgba(255, 250, 240, 0.04);
   color: var(--paper);
 }
@@ -1130,8 +1133,14 @@ select {
 
 .restaurant-call-link:hover,
 .restaurant-call-link:focus-visible {
-  border-color: rgba(255, 250, 240, 0.88);
-  background: rgba(255, 250, 240, 0.12);
+  border-color: var(--sun);
+  background: rgba(225, 176, 93, 0.12);
+}
+
+.restaurant-info-panel button:hover,
+.restaurant-info-panel button:focus-visible {
+  background: var(--sun-hover);
+  color: var(--ink);
 }
 
 .restaurant-carousel {
@@ -1179,7 +1188,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0;
-  border: 1px solid rgba(35, 57, 72, 0.22);
+  border: 1px solid rgba(225, 176, 93, 0.64);
   border-radius: 999px;
   padding: 9px 24px;
   color: var(--sea);
@@ -1238,7 +1247,7 @@ select {
 }
 
 .review-stars {
-  color: var(--sea);
+  color: var(--sun);
   font-size: 1.42rem;
   letter-spacing: 0.03em;
 }
@@ -1249,9 +1258,9 @@ select {
   height: 42px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgba(35, 57, 72, 0.14);
+  border: 1px solid rgba(225, 176, 93, 0.48);
   border-radius: 999px;
-  background: rgba(35, 57, 72, 0.06);
+  background: rgba(225, 176, 93, 0.08);
   color: var(--sea);
 }
 
@@ -1261,7 +1270,7 @@ select {
 }
 
 .tripadvisor-icon-wing {
-  fill: #243947;
+  fill: var(--sea);
 }
 
 .tripadvisor-icon-eye {
@@ -1269,11 +1278,11 @@ select {
 }
 
 .tripadvisor-icon-pupil {
-  fill: #243947;
+  fill: var(--sea);
 }
 
 .tripadvisor-icon-beak {
-  fill: #e1b05d;
+  fill: var(--sun);
 }
 
 .review-card blockquote {
@@ -1306,11 +1315,17 @@ select {
   margin-top: 36px;
   border-radius: 999px;
   padding: 0 32px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
   font-size: 0.94rem;
   font-weight: 900;
   box-shadow: 0 18px 54px rgba(33, 28, 24, 0.16);
+}
+
+.review-cta:hover,
+.review-cta:focus-visible {
+  background: var(--sun-hover);
+  color: var(--ink);
 }
 
 .review-cta .tripadvisor-icon {
@@ -1394,7 +1409,7 @@ select {
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid rgba(35, 57, 72, 0.22);
+  border: 1px solid rgba(225, 176, 93, 0.56);
   border-radius: 12px;
   color: var(--sea);
 }
@@ -1446,12 +1461,12 @@ select {
 }
 
 .contact-actions .button-primary {
-  background: var(--ink);
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
 }
 
 .contact-call {
-  border-color: rgba(33, 28, 24, 0.16);
+  border-color: rgba(225, 176, 93, 0.58);
   background: rgba(255, 250, 240, 0.72);
   color: var(--ink);
 }
@@ -1470,7 +1485,7 @@ select {
 .route-card::before {
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(35, 57, 72, 0.14);
+  border: 1px solid rgba(225, 176, 93, 0.38);
   border-radius: calc(var(--radius) - 8px);
   content: "";
   pointer-events: none;
@@ -1485,7 +1500,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0;
-  border: 1px solid rgba(35, 57, 72, 0.16);
+  border: 1px solid rgba(225, 176, 93, 0.52);
   border-radius: 999px;
   padding: 9px 24px;
   background: rgba(255, 250, 240, 0.62);
@@ -1574,7 +1589,7 @@ select {
   align-content: stretch;
   gap: 0;
   padding: 0;
-  background: #211c18;
+  background: var(--ink);
 }
 
 .route-map-card::before {
@@ -1631,8 +1646,8 @@ select {
   margin-top: 4px;
   border-radius: 999px;
   padding: 11px 20px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -1642,7 +1657,8 @@ select {
 
 .route-map-link:hover,
 .route-map-link:focus-visible {
-  background: var(--sea);
+  background: var(--sun-hover);
+  color: var(--ink);
   transform: translateY(-1px);
 }
 
@@ -2408,8 +2424,8 @@ select {
 .booking-form .button {
   min-height: 58px;
   margin-top: 8px;
-  background: #302821;
-  color: var(--white);
+  background: var(--sun);
+  color: var(--ink);
 }
 
 @media (max-width: 1040px) {
@@ -2710,17 +2726,26 @@ select {
     padding-bottom: 82px;
   }
 
+  .restaurant-experience,
+  .twiga-beach,
+  .history-section,
+  .reviews-section,
+  .contacts-section {
+    text-align: center;
+  }
+
   .mobile-section-pill,
   .review-pill,
   .contact-pill {
-    display: inline-flex;
-    width: max-content;
+    display: flex;
+    width: fit-content;
     max-width: calc(100% - 30px);
     min-height: 32px;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     margin: 0 auto 28px;
-    border: 1px solid rgba(35, 57, 72, 0.22);
+    border: 1px solid rgba(225, 176, 93, 0.64);
     border-radius: 999px;
     padding: 6px 14px;
     color: var(--sea);
@@ -2912,6 +2937,7 @@ select {
     max-width: 100%;
     margin: 48px auto 0;
     padding: 32px 22px;
+    text-align: center;
   }
 
   .restaurant-panel-actions {
@@ -2961,6 +2987,7 @@ select {
     min-height: 0;
     border-radius: var(--radius);
     padding: 22px;
+    text-align: center;
     box-shadow: 0 18px 44px rgba(33, 28, 24, 0.08);
   }
 
@@ -2979,6 +3006,7 @@ select {
   .review-card-top {
     align-items: center;
     flex-direction: row;
+    justify-content: center;
     margin-bottom: 18px;
   }
 
@@ -3009,6 +3037,8 @@ select {
   .review-cta {
     width: 100%;
     min-height: 58px;
+    margin-right: auto;
+    margin-left: auto;
     padding: 0 20px;
   }
 
@@ -3037,13 +3067,14 @@ select {
   }
 
   .contact-item {
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 1fr;
     gap: 8px;
     width: 100%;
     margin-top: 5px;
     border-radius: 12px;
-    padding: 6px 8px;
-    text-align: left;
+    padding: 10px 12px;
+    justify-items: center;
+    text-align: center;
   }
 
   .contact-icon {
@@ -3219,7 +3250,7 @@ select {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 5px;
-    border: 1px solid rgba(35, 57, 72, 0.16);
+    border: 1px solid rgba(225, 176, 93, 0.52);
     border-radius: 15px;
     background: rgba(255, 250, 240, 0.8);
     box-shadow:
@@ -3287,8 +3318,8 @@ select {
 
   .mobile-cta-reservation {
     gap: 9px;
-    background: linear-gradient(180deg, var(--sea) 0%, var(--sea-dark) 100%);
-    color: var(--white);
+    background: linear-gradient(180deg, var(--sun) 0%, var(--sun-hover) 100%);
+    color: var(--ink);
   }
 
   .menu-modal {
@@ -3634,7 +3665,7 @@ img[src$="placeholder-black.svg"] {
   align-items: center;
   justify-content: center;
   margin: 0 auto 26px;
-  border: 1px solid rgba(35, 57, 72, 0.22);
+  border: 1px solid rgba(225, 176, 93, 0.64);
   border-radius: 999px;
   padding: 9px 24px;
   color: var(--sea);
@@ -3940,7 +3971,7 @@ img[src$="placeholder-black.svg"] {
   width: min(560px, 100%);
   margin: 34px 0 0;
   padding: 38px;
-  background: #302821;
+  background: var(--ink);
   color: var(--white);
 }
 
@@ -4033,21 +4064,25 @@ img[src$="placeholder-black.svg"] {
   .location-feature-copy.beach-story {
     width: min(100% - 30px, 1180px);
     margin: 0 auto;
+    text-align: center;
   }
 
   .location-feature-copy.beach-story h2 {
+    margin-right: auto;
+    margin-left: auto;
     font-size: 2.25rem;
     line-height: 1.12;
   }
 
   .location-feature-copy.beach-story p:not(.eyebrow) {
-    margin-top: 24px;
+    margin: 24px auto 0;
     font-size: 1rem;
   }
 
   .location-feature-copy .beach-info-panel {
-    margin-top: 36px;
+    margin: 36px auto 0;
     padding: 32px 22px;
+    text-align: center;
   }
 
   .route-map-card {
@@ -4062,6 +4097,12 @@ img[src$="placeholder-black.svg"] {
     gap: 9px;
     padding: 16px;
     border-radius: 12px;
+    text-align: center;
+  }
+
+  .route-map-link {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .route-map-card h3 {
