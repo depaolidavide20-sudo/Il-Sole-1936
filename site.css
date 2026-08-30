@@ -2179,6 +2179,7 @@ select {
   display: grid;
   grid-template-rows: auto auto auto auto minmax(0, 1fr);
   overflow: hidden;
+  overflow-x: hidden;
   padding: clamp(22px, 3vw, 36px);
   text-align: center;
 }
@@ -2228,9 +2229,12 @@ select {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   overflow: auto;
+  overflow-x: hidden;
   overscroll-behavior: contain;
   scroll-padding-bottom: 26px;
   padding: 0 8px 26px 0;
@@ -2356,8 +2360,13 @@ select {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 14px;
   align-items: start;
+  min-width: 0;
   border-top: 1px solid rgba(33, 28, 24, 0.09);
   padding: 11px 0 0;
+}
+
+.menu-item > div {
+  min-width: 0;
 }
 
 .menu-item:first-child {
@@ -2384,6 +2393,7 @@ select {
 }
 
 .menu-price {
+  min-width: max-content;
   color: var(--sea);
   font-size: 0.9rem;
   font-weight: 900;
@@ -3434,6 +3444,7 @@ select {
     grid-template-rows: auto auto auto auto minmax(0, 1fr);
     border-radius: 0;
     padding: 14px 12px 10px;
+    overflow-x: clip;
   }
 
   @supports (height: 100dvh) {
@@ -3464,10 +3475,12 @@ select {
   }
 
   .menu-dialog h2 {
+    max-width: 100%;
     margin-bottom: 6px;
     padding-right: 0;
-    font-size: 2.22rem;
+    font-size: clamp(1.86rem, 9.7vw, 2.22rem);
     line-height: 0.96;
+    white-space: normal;
   }
 
   .menu-intro {
@@ -3500,8 +3513,12 @@ select {
   }
 
   .menu-catalog {
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     gap: 10px;
+    grid-template-columns: minmax(0, 1fr);
+    overflow-x: hidden;
     padding: 0 0 12px;
     scroll-padding-bottom: 12px;
   }
@@ -3512,6 +3529,7 @@ select {
 
   .menu-section {
     gap: 7px;
+    min-width: 0;
     padding: 10px;
   }
 
@@ -3524,12 +3542,29 @@ select {
   }
 
   .menu-item {
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
     padding-top: 8px;
+  }
+
+  .menu-item > div {
+    min-width: 0;
   }
 
   .menu-item span:not(.menu-price) {
     line-height: 1.28;
+  }
+
+  .menu-price {
+    justify-self: start;
+    min-width: 0;
+    border: 1px solid rgba(225, 176, 93, 0.38);
+    border-radius: 999px;
+    padding: 3px 9px;
+    background: rgba(225, 176, 93, 0.1);
+    font-size: 0.8rem;
+    line-height: 1.15;
+    white-space: normal;
   }
 
   .form-row {
