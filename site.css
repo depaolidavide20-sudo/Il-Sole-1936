@@ -7,11 +7,11 @@
   --white: #fffaf0;
   --sea: #233948;
   --sea-dark: #172734;
-  --sun: #E1B05D;
-  --sun-hover: #C99543;
+  --sun: #F0D58F;
+  --sun-hover: #D8B96F;
   --coral: #a9674d;
   --green: #716b54;
-  --line: rgba(225, 176, 93, 0.32);
+  --line: rgba(240, 213, 143, 0.36);
   --shadow: 0 24px 80px rgba(33, 28, 24, 0.18);
   --radius: 8px;
   --hero-scale: 1;
@@ -122,7 +122,10 @@ button {
   align-items: center;
   gap: 24px;
   padding: 20px 34px;
-  color: var(--white);
+  background: rgba(247, 240, 221, 0.96);
+  color: var(--ink);
+  box-shadow: 0 12px 40px rgba(33, 28, 24, 0.12);
+  backdrop-filter: blur(14px);
   transition: background 220ms ease, color 220ms ease, box-shadow 220ms ease, padding 220ms ease;
 }
 
@@ -133,6 +136,7 @@ button {
   height: 132px;
   background: linear-gradient(180deg, rgba(20, 13, 8, 0.82), rgba(20, 13, 8, 0));
   content: "";
+  opacity: 0;
   pointer-events: none;
   transition: opacity 220ms ease;
 }
@@ -220,10 +224,10 @@ button {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  border: 1px solid rgba(255, 250, 240, 0.42);
+  border: 1px solid rgba(35, 57, 72, 0.18);
   border-radius: 999px;
   padding: 8px 13px;
-  background: rgba(255, 250, 240, 0.08);
+  background: rgba(255, 250, 240, 0.55);
   color: inherit;
   font-size: 0.78rem;
   font-weight: 900;
@@ -261,10 +265,10 @@ button {
   justify-content: center;
   flex-direction: column;
   gap: 4px;
-  border: 1px solid rgba(255, 250, 240, 0.42);
+  border: 1px solid rgba(35, 57, 72, 0.18);
   border-radius: 999px;
   padding: 0;
-  background: rgba(255, 250, 240, 0.08);
+  background: rgba(255, 250, 240, 0.55);
   color: inherit;
   backdrop-filter: blur(12px);
 }
@@ -321,7 +325,7 @@ button {
 .button-primary {
   background: var(--sun);
   color: var(--ink);
-  box-shadow: 0 16px 38px rgba(225, 176, 93, 0.24);
+  box-shadow: 0 16px 38px rgba(240, 213, 143, 0.24);
 }
 
 .button-primary:hover,
@@ -790,11 +794,11 @@ select {
   display: grid;
   width: 66px;
   height: 66px;
-  border: 1px solid rgba(225, 176, 93, 0.64);
+  border: 1px solid rgba(240, 213, 143, 0.64);
   border-radius: 50%;
   background: rgba(255, 250, 240, 0.56);
   color: var(--sun);
-  box-shadow: 0 16px 42px rgba(225, 176, 93, 0.12);
+  box-shadow: 0 16px 42px rgba(240, 213, 143, 0.12);
   transition:
     border-color 180ms ease,
     background 180ms ease,
@@ -855,7 +859,7 @@ select {
 }
 
 .carousel-arrow:focus-visible {
-  outline: 2px solid rgba(225, 176, 93, 0.42);
+  outline: 2px solid rgba(240, 213, 143, 0.42);
   outline-offset: 6px;
 }
 
@@ -1022,7 +1026,7 @@ select {
 .restaurant-feature-media::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(108deg, transparent 28%, rgba(255, 250, 240, 0.22) 44%, rgba(225, 176, 93, 0.2) 50%, transparent 66%);
+  background: linear-gradient(108deg, transparent 28%, rgba(255, 250, 240, 0.22) 44%, rgba(240, 213, 143, 0.2) 50%, transparent 66%);
   content: "";
   opacity: 0;
   pointer-events: none;
@@ -1119,7 +1123,7 @@ select {
 }
 
 .restaurant-call-link {
-  border: 1px solid rgba(225, 176, 93, 0.7);
+  border: 1px solid rgba(240, 213, 143, 0.7);
   background: rgba(255, 250, 240, 0.04);
   color: var(--paper);
 }
@@ -1134,7 +1138,7 @@ select {
 .restaurant-call-link:hover,
 .restaurant-call-link:focus-visible {
   border-color: var(--sun);
-  background: rgba(225, 176, 93, 0.12);
+  background: rgba(240, 213, 143, 0.12);
 }
 
 .restaurant-info-panel button:hover,
@@ -1188,7 +1192,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0;
-  border: 1px solid rgba(225, 176, 93, 0.64);
+  border: 1px solid rgba(240, 213, 143, 0.64);
   border-radius: 999px;
   padding: 9px 24px;
   color: var(--sea);
@@ -1220,10 +1224,6 @@ select {
   gap: 24px;
   margin-top: 56px;
   text-align: left;
-}
-
-.review-swipe-hint {
-  display: none;
 }
 
 .review-card {
@@ -1258,9 +1258,9 @@ select {
   height: 42px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgba(225, 176, 93, 0.48);
+  border: 1px solid rgba(240, 213, 143, 0.48);
   border-radius: 999px;
-  background: rgba(225, 176, 93, 0.08);
+  background: rgba(240, 213, 143, 0.08);
   color: var(--sea);
 }
 
@@ -1344,15 +1344,6 @@ select {
   fill: var(--white);
 }
 
-.review-note {
-  width: fit-content;
-  margin: 14px auto 0;
-  color: var(--sea);
-  font-size: 0.94rem;
-  font-weight: 800;
-  text-align: center;
-}
-
 .contacts-section {
   padding: 28px 34px 32px;
   background: var(--paper);
@@ -1409,7 +1400,7 @@ select {
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid rgba(225, 176, 93, 0.56);
+  border: 1px solid rgba(240, 213, 143, 0.56);
   border-radius: 12px;
   color: var(--sea);
 }
@@ -1466,7 +1457,7 @@ select {
 }
 
 .contact-call {
-  border-color: rgba(225, 176, 93, 0.58);
+  border-color: rgba(240, 213, 143, 0.58);
   background: rgba(255, 250, 240, 0.72);
   color: var(--ink);
 }
@@ -1485,7 +1476,7 @@ select {
 .route-card::before {
   position: absolute;
   inset: 18px;
-  border: 1px solid rgba(225, 176, 93, 0.38);
+  border: 1px solid rgba(240, 213, 143, 0.38);
   border-radius: calc(var(--radius) - 8px);
   content: "";
   pointer-events: none;
@@ -1500,7 +1491,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0;
-  border: 1px solid rgba(225, 176, 93, 0.52);
+  border: 1px solid rgba(240, 213, 143, 0.52);
   border-radius: 999px;
   padding: 9px 24px;
   background: rgba(255, 250, 240, 0.62);
@@ -2755,7 +2746,7 @@ select {
     justify-content: center;
     justify-self: center;
     margin: 0 auto 28px;
-    border: 1px solid rgba(225, 176, 93, 0.64);
+    border: 1px solid rgba(240, 213, 143, 0.64);
     border-radius: 999px;
     padding: 6px 14px;
     color: var(--sea);
@@ -3002,15 +2993,7 @@ select {
   }
 
   .review-swipe-hint {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 16px 0 0;
-    color: var(--sea);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    display: none;
   }
 
   .review-card-top {
@@ -3077,20 +3060,26 @@ select {
   }
 
   .contact-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: 30px minmax(0, 1fr);
     gap: 8px;
     width: 100%;
     margin-top: 5px;
     border-radius: 12px;
     padding: 10px 12px;
-    justify-items: center;
-    text-align: center;
+    align-items: start;
+    justify-items: stretch;
+    text-align: left;
+  }
+
+  .contact-item > div {
+    min-width: 0;
   }
 
   .contact-icon {
     width: 28px;
     height: 28px;
     border-radius: 10px;
+    justify-self: start;
   }
 
   .contact-icon svg {
@@ -3260,7 +3249,7 @@ select {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 5px;
-    border: 1px solid rgba(225, 176, 93, 0.52);
+    border: 1px solid rgba(240, 213, 143, 0.52);
     border-radius: 15px;
     background: rgba(255, 250, 240, 0.8);
     box-shadow:
@@ -3558,10 +3547,10 @@ select {
   .menu-price {
     justify-self: start;
     min-width: 0;
-    border: 1px solid rgba(225, 176, 93, 0.38);
+    border: 1px solid rgba(240, 213, 143, 0.38);
     border-radius: 999px;
     padding: 3px 9px;
-    background: rgba(225, 176, 93, 0.1);
+    background: rgba(240, 213, 143, 0.1);
     font-size: 0.8rem;
     line-height: 1.15;
     white-space: normal;
@@ -3700,7 +3689,7 @@ img[src$="placeholder-black.svg"] {
   align-items: center;
   justify-content: center;
   margin: 0 auto 26px;
-  border: 1px solid rgba(225, 176, 93, 0.64);
+  border: 1px solid rgba(240, 213, 143, 0.64);
   border-radius: 999px;
   padding: 9px 24px;
   color: var(--sea);

@@ -82,8 +82,6 @@
     ["#location .beach-info-panel strong", "Lungomare Castello 10 · Rapallo"],
     [".review-pill", "Reviews"],
     [".reviews-inner h2", "What guests say"],
-    [".review-swipe-hint", "Swipe to read reviews"],
-    [".review-note", "Public rating listed around 4.3/5 on Tripadvisor"],
     [".contact-pill", "Contacts"],
     [".contact-card h2", "Come visit us."],
     [".contact-item:nth-of-type(1) div > span", "How to reach us"],
