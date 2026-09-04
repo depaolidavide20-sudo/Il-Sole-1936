@@ -503,6 +503,7 @@ h3 {
 .hero-social-links {
   display: flex;
   justify-content: center;
+  gap: 12px;
   margin-top: 16px;
 }
 
@@ -539,6 +540,11 @@ h3 {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
+}
+
+.hero-social-link .facebook-icon {
+  fill: currentColor;
+  stroke: none;
 }
 
 .hero-scroll {
